@@ -1,20 +1,16 @@
 $(document).ready(function() {
-  var custname;
-  var custstreet;
-  var custcity;
-  var custstate;
-  var custzip;
   $("button#checkout").click(function(event){
     $("#custinfo").css("display","block");
     event.preventDefault();
   });
+
   $("form#custinfo").submit(function(event){
     event.preventDefault();
-    custname = $("#name").val();
-    custstreet = $("#street").val();
-    custcity = $("#city").val();
-    custstate = $("#state").val();
-    custzip = $("#zip").val();
+    var custname = $("#name").val();
+    var custstreet = $("#street").val();
+    var custcity = $("#city").val();
+    var custstate = $("#state").val();
+    var custzip = $("#zip").val();
     $("#return-name").text(custname);
     $("#return-street").text(custstreet);
     $("#return-city-state-zip").text(custcity + ", " + custstate + " " + custzip);
@@ -25,5 +21,6 @@ $(document).ready(function() {
   });
   $(".close").click(function(){
     $("#myModal").css("display", "none");
+    location.reload();
   });
 });
